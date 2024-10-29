@@ -67,66 +67,81 @@
 
   <div class="container mt-5 mb-5">
 
-    <div class="row mt-5 mb-5 text-center">
-      <div class="col-md-3"></div>
-      <div class="col-md-2 mb-3">
+    <div class="row mt-5 mb-5">
+      <div class="col-md-3 mb-3 text-center">
         <img src="{% static 'images/engineering.png' %}" alt="engineering" width="150px" height="auto">
         <h3 style="color:#16162E; font-size: 16px; text-transform: uppercase;margin-top:10px;">Engineering</h3>
       </div>
     
-      <div class="col-md-2 mb-3">
+      <div class="col-md-3 mb-3 text-center">
         <img src="{% static 'images/mining.png' %}" alt="mining" width="150px" height="auto">
         <h3 style="color:#FF4800; font-size: 16px; text-transform: uppercase;margin-top:10px;">Mining</h3>
       </div>
     
-      <div class="col-md-2 mb-3">
+      <div class="col-md-3 mb-3 text-center">
         <img src="{% static 'images/infrastructure.png' %}" alt="infrastructure" width="150px" height="auto">
         <h3 style="color:#0051FF; font-size: 16px; text-transform: uppercase;margin-top:10px;">Infrastructure</h3>
       </div>
-      <div class="col-md-3"></div>
 
 
-
-      <!-- <div class="col-md-3 mb-3 text-center">
+      <div class="col-md-3 mb-3 text-center">
         <img src="{% static 'images/mining.png' %}" alt="mining" width="150px" height="auto">
         <h3 style="color:#FF4800; font-size: 16px; text-transform: uppercase;margin-top:10px;">Mining</h3>
-      </div> -->
-
+      </div>
     </div>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Carousel -->
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div>
+  
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'images/sccl.jpg' %}" alt="SCCL" style="max-width:100%;height:100px">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/sccl.jpg' %}" alt="SCCL" style="max-width:100%;height:100px">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'images/sccl.jpg' %}" alt="SCCL" style="max-width:100%;height:100px">
+    </div>
+  </div>
+  
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+      </div>
+    </div>
+    
+
+
+
+
+
+
 
     <div class="row text-center">
-      <h2 style="color: #111111;font-size: 24px; text-transform: uppercase;margin-bottom:40px;font-weight:bolder">Our Clients</h2>
-
-      <!-- <h2 style="color: #111111;font-size: 20px; text-transform: uppercase;margin-bottom:40px;font-weight:bolder">Our <span style="color:#ff4800">Clients</span> </h2> -->
-
-
-      <div class="col-md-3"></div>
-
-      <div class="col-md-2 mb-3">
-        <img src="{% static 'images/sccl.jpg' %}" alt="SCCL" style="max-width:100%;height:auto">
+      <div class="col-md-12">
+        <h2 style="color: #111111;font-size: 20px; text-transform: uppercase;margin-top:10px;">Our Clients</h2>
       </div>
-      <div class="col-md-2 mb-3">
-        <img src="{% static 'images/acme.png' %}" alt="SCCL" style="max-width:100%;height:auto">
-      </div>
-      <div class="col-md-2 mb-3">
-        <img src="{% static 'images/asian-energy.png' %}" alt="SCCL" style="max-width:100%;height:auto">
-      </div>
-      <div class="col-md-3"></div>
-
+      
+  
 
     </div>
-
-
-   
-    
-
-
-
-
-
-
-
-    
 
 
 </div>
