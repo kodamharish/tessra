@@ -11,6 +11,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
 
+        /*Home */
+
         /* Full-page loader styling */
         #loader {
             position: fixed;
@@ -53,9 +55,23 @@
             color: #ff4800;
         }
 
+        .nav-item a.active{
+            color: green !important;
+
+        }
+
         /* Right-align the navigation items */
         .navbar-nav {
             margin-left: auto; /* Aligns the nav links to the right */
+        }
+
+        .services-icon img:hover{
+            width:160px;
+            height: auto;
+        }
+
+        .carousel-caption h3{
+            font-weight: 900 !important;
         }
 
         /* Footer Styling */
@@ -76,30 +92,26 @@
 
 
 
+ /* About */
 
-        /* Styling for the stats section */
-.stats-section {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #fbc6b1;  /* Background color similar to the image */
-    padding: 20px;
-    border-radius: 10px;  /* Rounded corners */
-}
 
-/* Styling for individual stat item */
-
-/* Global styling for the sections */
+ /* Global styling for the sections */
 .section {
     margin-bottom: 40px; /* Adds space between sections */
     
 }
 
-h2 {
+.section h2 {
     font-size: 36px; /* Larger font for headings */
     color: #222; /* Dark color for headings */
     margin-bottom: 10px; /* Space below the heading */
 }
+
+.section h2:hover{
+    color: #ff4800;
+
+}
+
 
 .section p {
     font-size: 18px; /* Size of paragraph text */
@@ -110,13 +122,23 @@ h2 {
 }
 
 
+/* Styling for the stats section */
+.stats-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fbc6b1;  /* Background color similar to the image */
+    padding: 20px;
+    border-radius: 10px;  /* Rounded corners */
+}
 
+/* Styling for individual stat item */
 .stat-item {
     text-align: center;
 }
 
 .stat-item h2 {
-    font-size: 50px;  /* Large number size */
+    font-size: 60px;  /* Large number size for larger screens */
     color: #188e76;   /* Green color similar to the image */
     margin: 0;
 }
@@ -126,6 +148,15 @@ h2 {
     color: #188e76;   /* Matching green color */
     margin-top: 10px;
 }
+
+/* Media query for small screens */
+@media (max-width: 576px) {
+    .stat-item h2 {
+        font-size: 20px;  /* Adjusted size for small screens */
+    }
+}
+
+
 
 
 
@@ -150,6 +181,14 @@ h2 {
     text-align: center;
     font-weight: 800;
 }
+
+
+
+
+.service-item img:hover{
+    opacity: 0.5;
+}
+
         
 
     </style>
@@ -177,13 +216,13 @@ h2 {
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'index' %}">Home</a>
+                            <a class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}" href="{% url 'index' %}" >Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'about_us' %}">About</a>
+                            <a class="nav-link {% if request.resolver_match.url_name == 'about_us' %}active{% endif %}" href="{% url 'about_us' %}" >About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Services</a>
+                            <a class="nav-link {% if request.resolver_match.url_name == 'services' %}active{% endif %}"  href="{% url 'services' %}" >Services</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Projects</a>
@@ -202,7 +241,7 @@ h2 {
         <div class="container-fluid footer">
             <div class="row align-items-center">
                 <div class="col-md-12">
-                    <p class="m-0 text-center p-2">Copyright &copy; 2024 Tessra Minerals. All rights reserved.</p>
+                    <p class="m-0 p-2">Copyright &copy; 2024 Tessra Minerals. All rights reserved.</p>
                 </div>
                 
             </div>
