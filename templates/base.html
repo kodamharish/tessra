@@ -65,10 +65,7 @@
             margin-left: auto; /* Aligns the nav links to the right */
         }
 
-        .services-icon img:hover{
-            width:160px;
-            height: auto;
-        }
+        
 
         .carousel-caption h3{
             font-weight: 900 !important;
@@ -102,7 +99,7 @@
             width: 100%; /* Ensure the caption takes full width */
             left: 0;
             right: 0;
-            bottom: 0; /* Stick to the bottom */
+            
           }
         
           .carousel-caption h3, .carousel-caption p {
@@ -110,7 +107,8 @@
             margin: 0 auto;
             max-width: 80%; /* Limiting the width for better readability */
           }
-        
+
+          
           /* Media query for small screens */
           @media (max-width: 768px) {
             .carousel-caption h3 {
@@ -125,6 +123,13 @@
        
 
 
+          .services-icon img {
+            transition: transform 0.3s ease; /* Smooth transition */
+          }
+          
+          .services-icon img:hover {
+            transform: scale(1.1); /* Adjust the scale to zoom in or out */
+          }
 
 
 
@@ -203,13 +208,7 @@
     color: #000000;
     margin-bottom: 40px;
 }
-.service-item img {
-    width: 100%;
-    height: auto;
-    max-height: 250px;
-    
-    
-}
+
 .service-item h2 {
     font-size: 1.2rem;
     color: #333;
@@ -221,26 +220,60 @@
 
 
 
-.service-item img:hover{
-    opacity: 0.5;
+
+
+
+
+
+
+
+.service-item {
+    position: relative;
+    overflow: hidden;
 }
 
+.image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
 
+.image-wrapper img {
+    transition: transform 0.3s ease;
+}
 
-img.responsive-gif {
+.image-wrapper:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto; /* Ensures the image maintains its aspect ratio */
-    max-height: 100vh; /* Limits the image height to 100% of the viewport height */
+    height: 100%;
+    background-color: rgba(255, 168, 0, 0.8); /* Yellowish-orange color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-@media (max-width: 600px) {
-    img.responsive-gif {
-        height: 100vh; /* On small screens, make the height 100% of the viewport */
-        width: auto; /* Adjust the width proportionally */
-    }
+.image-wrapper:hover .overlay {
+    opacity: 1;
 }
 
-        
+.overlay h4 {
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+
+
+
+
 
     </style>
 </head>
@@ -248,7 +281,7 @@ img.responsive-gif {
 
     <!-- Loader -->
     <div id="loader">
-        <img src="{% static 'images/loader.gif' %}" alt="Loading..." class="responsive-gif">
+        <img src="{% static 'images/loader.gif' %}" alt="Loading..." width="auto" height="auto" >
     </div>
 
     <!-- Main Content -->
