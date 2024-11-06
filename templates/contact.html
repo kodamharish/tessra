@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<div class="container">
+    <div class="row mt-5 mb-5 contact-us">
+        <h2><span class="border-bottom">Contact Us</span></h2>
+        <div class="col-md-4">
+            <form>
+                <div class="mb-3 mt-3">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name">
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email">
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="phone_number">Phone Number</label>
+                    <input type="number" class="form-control" id="phone_number" placeholder="Enter Phone Number"
+                        name="phone_number">
+                </div>
+                <div class="mb-3">
+                    <label for="subject">Subject</label>
+                    <input type="text" class="form-control" id="subject" placeholder="Enter Subject" name="subject">
+                </div>
+
+                <div class="mb-3 mt-3">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" rows="5" id="description" name="description"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h2><span class="border-bottom">Registered Office</span></h2>
+            <p class="mt-5 text-center">
+                # 1-9-334 Basithnagar Julywada <br>
+                subedari Hanumakonda <br>
+                Telangana - 506001 <br>
+                <i class="fas fa-envelope m-2"></i>enquiry@tessra.in <br>
+                Mon - Sat: 9:00 - 18:00
+            </p>
+        </div>
+
+    </div>
+</div>
+{% endblock content %}
