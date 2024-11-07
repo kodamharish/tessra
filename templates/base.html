@@ -46,7 +46,7 @@
         }
 
         .nav-item a {
-            padding: 15px 20px !important;
+            padding: 8px 20px !important;
             font-size: 16px;
             font-weight: 500;
             color: black;
@@ -273,6 +273,33 @@
 }
 
 
+/* Project */
+
+.proj-main-heading{
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom:10px;
+    padding-bottom: 28px;
+    font-weight: 700;
+}
+
+.proj-sub-heading{
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.proj-color{
+    color:#ff4800;
+}
+
+.dropdown-item:active {
+    
+    background-color:unset !important;
+    color: #000000 !important;
+}
+
+
 /* Contact Us */
 
 .contact-us h2{
@@ -280,7 +307,7 @@
     text-transform: uppercase;
 }
 
-.contact-us .border-bottom{
+.border-bottom{
     border-bottom: 8px solid #ff4800 !important;
 
 }
@@ -377,7 +404,7 @@ margin: 0;
         
         
 
-        <nav class="navbar navbar-expand-md">
+        <nav class="navbar navbar-expand-md sticky-top">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
                     <img src="{% static 'images/logo.png'%}" alt="logo" width="260px" height="auto" />
@@ -396,9 +423,17 @@ margin: 0;
                         <li class="nav-item">
                             <a class="nav-link {% if request.resolver_match.url_name == 'services' %}active{% endif %}"  href="{% url 'services' %}" >Services</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Projects</a>
-                        </li>
+                        
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Projects</a>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="{% url 'projects_on_going' %}">On going</a></li>
+                              <li><a class="dropdown-item" href="{% url 'projects_up_coming' %}">Upcoming</a></li>
+                              <li><a class="dropdown-item" href="{% url 'projects_completed' %}">Completed</a></li>
+                            </ul>
+                          </li>
                         <li class="nav-item">
                             <a class="nav-link {% if request.resolver_match.url_name == 'contact_us' %}active{% endif %}"  href="{% url 'contact_us' %}"  >Contact Us</a>
                         </li>

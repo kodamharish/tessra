@@ -83,4 +83,28 @@
 
     </div>
 </div>
+
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<script>
+    function sendEmail() {
+        var userEmail = document.getElementById("email").value;
+        var emailSubject = document.getElementById("subject").value;
+        var emailBody = document.getElementById("body").value;
+
+        Email.send({
+            Host: "smtp.gmail.com",
+            Username: "enquiry@tessra.in",
+            Password: "xfvyommwvxtmbaxw",  // Consider moving sensitive info to the backend
+            To: 'enquiry@tessra.in',
+            From: userEmail,
+            Subject: emailSubject,
+            Body: emailBody
+        }).then(
+            message => alert(message)
+        );
+    }
+</script>
+
 {% endblock content %}
